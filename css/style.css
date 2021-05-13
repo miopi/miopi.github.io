@@ -1,0 +1,224 @@
+@charset "UTF-8";
+/*
+320px（最小）
+560px未満 @media screen and (max-width: 559px) {}
+960px未満 @media screen and (max-width: 959px) {}
+
+@media (max-width: $sp)
+@media (max-width: $pc)
+*/
+@media (min-width: 641px) {
+  .sp {
+    display: none; } }
+@media (max-width: 640px) {
+  width: 100%;
+  .pc {
+    display: none; } }
+/* --------------------------------------
+   base */
+html {
+  scroll-behavior: smooth; }
+
+body {
+  background-color: #FDFAF4;
+  font-size: 1.0rem;
+  line-height: 1.25;
+  color: #2b2b2b;
+  width: 100%; }
+  body .logo_img {
+    height: 27px;
+    width: 26px; }
+  @media (min-width: 641px) {
+    body .sp {
+      display: none; } }
+  @media (max-width: 640px) {
+    body {
+      width: 100%; }
+      body .pc {
+        display: none; } }
+
+h1 {
+  font-size: 1.2rem; }
+
+p {
+  font-size: 0.8rem;
+  line-height: 1.3; }
+
+/* --------------------------------------
+   header */
+header {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(253, 250, 244, 0.5);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+  margin: 20px auto;
+  margin-top: 0;
+  position: fixed;
+  z-index: 90; }
+  header .top_logo a {
+    display: flex;
+    align-items: center; }
+  header .top_logo p {
+    margin-left: 8px;
+    font-size: 0.7rem; }
+  header .g_nav ul {
+    display: flex; }
+    header .g_nav ul li {
+      font-size: 0.7rem;
+      margin-left: 10px;
+      transition: color,0.3s; }
+      header .g_nav ul li:hover {
+        color: #787878; }
+  @media (max-width: 640px) {
+    header .g_nav_open {
+      width: 100%;
+      height: auto;
+      padding: 10px 0;
+      background-color: #FDFAF4;
+      position: absolute;
+      top: 62px;
+      left: 0;
+      z-index: 100;
+      display: none; }
+      header .g_nav_open ul {
+        display: block;
+        margin: auto 0; }
+        header .g_nav_open ul li {
+          padding: 16px 0; }
+          header .g_nav_open ul li a {
+            font-size: 1.0rem;
+            display: inline-block;
+            margin: auto 0; } }
+
+/* --------------------------------------
+   main */
+main {
+  width: 85%;
+  margin: 0 auto; }
+  main .container:nth-of-type(2n) .item {
+    display: flex;
+    flex-direction: row-reverse; }
+  main .container {
+    margin: 0 auto;
+    padding: 60px 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    main .container .item {
+      margin: auto 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center; }
+      main .container .item .figure {
+        width: 40%; }
+        main .container .item .figure .f1, main .container .item .figure .f2, main .container .item .figure .f3, main .container .item .figure .f4, main .container .item .figure .f5 {
+          width: 220px;
+          height: 140px;
+          margin: 0 auto; }
+        main .container .item .figure .f1 {
+          background-color: #DD3764; }
+        main .container .item .figure .f2 {
+          background-color: #EFA154; }
+        main .container .item .figure .f3 {
+          background-color: #6B83D3; }
+        main .container .item .figure .f4 {
+          background-color: #59BE68; }
+        main .container .item .figure .f5 {
+          background-color: #DDD24C; }
+        main .container .item .figure .f1, main .container .item .figure .f3, main .container .item .figure .f5 {
+          animation: move1 4s ease-in 0s infinite alternate forwards running; }
+        main .container .item .figure .f2, main .container .item .figure .f4 {
+          animation: move2 3s ease-in 0s infinite alternate forwards running; }
+@keyframes move1 {
+  0% {
+    border-radius: 100px 40px 30px 40px / 40px 100px 50px 100px; }
+  100% {
+    border-radius: 80px 90px 100px 100px / 100px 60px 80px 50px; } }
+@keyframes move2 {
+  0% {
+    border-radius: 80px 60px 70px 50px / 60px 120px 60px 110px; }
+  100% {
+    border-radius: 200px 100px 110px 80px / 100px 50px 90px 50px; } }
+      main .container .item .txt {
+        width: 50%;
+        margin: 0 20px; }
+        main .container .item .txt h1 {
+          margin: 20px 0; }
+        main .container .item .txt p {
+          width: 80%; }
+      main .container .item .txt:nth-of-type(2n) {
+        margin-right: 0px;
+        margin-left: 40px; }
+  main #works a {
+    font-size: 0.9rem;
+    display: inline-block;
+    margin: 8px 0;
+    text-decoration: underline;
+    transition: color,0.3s; }
+    main #works a:hover {
+      color: #59BE68; }
+  main #contact a {
+    display: inline-block;
+    margin: 8px 0;
+    text-decoration: underline;
+    transition: color,0.3s; }
+    main #contact a:hover {
+      color: #DDD24C; }
+  @media (max-width: 640px) {
+    main .container {
+      position: relative;
+      width: 90%;
+      margin: 0 auto;
+      height: 100vh; }
+      main .container .item {
+        display: block; }
+        main .container .item .figure,
+        main .container .item .txt {
+          width: 100%; }
+        main .container .item .figure {
+          position: absolute;
+          top: 50%;
+          left: 0; }
+          main .container .item .figure .f1, main .container .item .figure .f2, main .container .item .figure .f3, main .container .item .figure .f4, main .container .item .figure .f5 {
+            width: 220px;
+            height: 140px;
+            margin: 0 auto; }
+          main .container .item .figure .f1 {
+            background-color: #f0a4b8; }
+          main .container .item .figure .f2 {
+            background-color: #fae1c9; }
+          main .container .item .figure .f3 {
+            background-color: #cdd5f0; }
+          main .container .item .figure .f4 {
+            background-color: #b5e2bb; }
+          main .container .item .figure .f5 {
+            background-color: #f1edb7; }
+        main .container .item .txt {
+          position: absolute;
+          left: 0;
+          margin: 0 20px; }
+          main .container .item .txt h1 {
+            margin: 20px 0; }
+          main .container .item .txt p {
+            width: 80%; } }
+
+/* --------------------------------------
+   footer */
+footer {
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  margin-bottom: 40px; }
+  footer .top_link {
+    text-align: right;
+    font-size: 0.7rem; }
+    footer .top_link a {
+      text-align: center; }
+  footer p {
+    font-size: 0.7rem;
+    text-align: center; }
+
+/*# sourceMappingURL=style.css.map */
